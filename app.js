@@ -8,7 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-
+const index = require('./routes/index');
+const authRoutes = require('./routes/auth-routes');
 
 // WHEN INTRODUCING USERS DO THIS:
 // INSTALL THESE DEPENDENCIES: passport-local, passport, bcryptjs, express-session
@@ -41,6 +42,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use('/api', authRoutes);
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -52,7 +54,8 @@ app.use(require('node-sass-middleware')({
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // ADD SESSION SETTINGS HERE:
@@ -81,13 +84,18 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 // ROUTES MIDDLEWARE STARTS HERE:
 
-const index = require('./routes/index');
+
 app.use('/', index);
 
 app.use('/api', require('./routes/project-routes'));
 app.use('/api', require('./routes/task-routes'));
+app.use('/api', require('./routes/auth-routes'));
 
-const authRoutes = require('./routes/auth-routes');
-app.use('/api', authRoutes);
+//for deployment on heroku
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/client/build/index.html")
+});
+
+
 
 module.exports = app;
