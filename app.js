@@ -19,10 +19,10 @@ const authRoutes = require('./routes/auth-routes');
 const session       = require('express-session');
 const passport      = require('passport');
 
+const app = express();
 // ADD SESSION SETTINGS HERE:
 
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
@@ -34,7 +34,8 @@ app.use(session({
 }));
 
 // USE passport.initialize() and passport.session() HERE:
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
@@ -50,7 +51,7 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-const app = express();
+
 
 // Middleware Setup
 app.use(logger('dev'));
