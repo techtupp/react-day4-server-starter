@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api', authRoutes);
-// Express View engine setup
+// Express View setup
 
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
@@ -73,6 +73,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(app.router);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
