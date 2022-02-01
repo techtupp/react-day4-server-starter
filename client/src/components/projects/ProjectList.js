@@ -26,18 +26,6 @@ class ProjectList extends Component {
     this.getAllProjects();
   }
 
-  // DELETE PROJECT:
-  deleteProject = () => {
-    const { params } = this.props.match;
-    axios.delete(`/api/projects/${params.id}`)
-      .then(() => {
-        this.props.history.push('/projects'); // !!!         
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
   render() {
     return (
       <table class="table">
@@ -67,7 +55,7 @@ class ProjectList extends Component {
                               <h3 class="list-item">{project.title}</h3>
                             </td>
                             <td>
-                              <button onClick={() => this.deleteProject()}>Delete project</button> {/* <== !!! */}
+                              
                             </td>
                           </Link>
                           {/* 🥁 added so the tasks can be displayed:  🥁 */}
