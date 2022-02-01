@@ -42,7 +42,7 @@ class Signup extends Component {
           <input class="input is-focused" type="text" name="username" placeholder="username" value={this.state.username} onChange={e => this.handleChange(e)} />
 
           <label>Password:</label>
-          <input class="input is-focused" type="text" name="password" placeholder="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+          <input class="input is-focused" type="password" name="password" placeholder="password" value={this.state.password} onChange={e => this.handleChange(e)} />
 
           <input type="submit" value="Signup" />
         </form>

@@ -5,9 +5,9 @@ import axios from 'axios';
 import 'bulma/css/bulma.css';
 
 class AddProject extends Component {
-  constructor(props){
-      super(props);
-      this.state = { title: "", description: "" };
+  constructor(props) {
+    super(props);
+    this.state = { title: "", description: "" };
   }
 
   handleFormSubmit = (event) => {
@@ -15,28 +15,37 @@ class AddProject extends Component {
     const title = this.state.title;
     const description = this.state.description;
     axios.post("/api/projects", { title, description })
-    .then( () => {
+      .then(() => {
         this.props.getData();
-        this.setState({title: "", description: ""});
-    })
-    .catch( error => console.log(error) )
+        this.setState({ title: "", description: "" });
+      })
+      .catch(error => console.log(error))
   }
 
-  handleChange = (event) => {  
-      const {name, value} = event.target;
-      this.setState({[name]: value});
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
-
-          <input type="submit" value="Submit" />
+        <form class="box" onSubmit={this.handleFormSubmit}>
+          <div class="field">
+            <label class="label">Todo:</label>
+            <div class="control">
+              <input class="input",type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Beschreibung:</label>
+            <div class="control">
+              <textarea class="textarea is-small is-focused  " name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
+            </div>
+          </div>
+          <div class="field">
+            <input type="submit" value="Submit" />
+          </div>
         </form>
       </div>
     )
