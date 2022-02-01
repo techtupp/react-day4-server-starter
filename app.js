@@ -61,6 +61,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(app.router);
 
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
