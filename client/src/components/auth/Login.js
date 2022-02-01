@@ -31,7 +31,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form class="box" onSubmit={this.handleFormSubmit}>
+        <form class="box" box-radius="radius-small" onSubmit={this.handleFormSubmit}>
           <div class="field">
             <label class="label">Username:</label>
             <div class="control">
@@ -41,7 +41,7 @@ class Login extends Component {
           <div class="field">
             <label class="label">Password:</label>
             <div class="control">
-              <textarea name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+              <input class="input" type="text"  name="password" placeholder="Password" value={this.state.password} onChange={e => this.handleChange(e)} />
             </div>
           </div>
           <input type="submit" value="Login" />
