@@ -21,6 +21,9 @@ const passport      = require('passport');
 
 // ADD SESSION SETTINGS HERE:
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: "doesn't matter in our case", // but it's required
@@ -32,8 +35,6 @@ app.use(session({
 
 // USE passport.initialize() and passport.session() HERE:
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
