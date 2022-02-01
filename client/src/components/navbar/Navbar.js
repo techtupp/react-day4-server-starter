@@ -16,7 +16,7 @@ const navbar = (props) => {
 
   if (props.userInSession) {
     return (
-      <nav className="nav-style">
+      <nav class="navbar">
         <ul>
           <li>Welcome, {props.userInSession.username}</li>
           <li>
@@ -33,7 +33,7 @@ const navbar = (props) => {
   } else {
     return (
       <div>
-        <nav className="nav-style">
+        <nav class="navbar">
           <ul>
             <li><Link to='/' style={{ textDecoration: 'none' }}>Login</Link></li>
             <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
