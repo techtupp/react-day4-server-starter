@@ -31,7 +31,7 @@ class Login extends Component {
   render() {
     return (
       <div class="container">
-        <form class="box" onSubmit={this.handleFormSubmit}>
+        <form class="box is-half is-offset-one-quarter" onSubmit={this.handleFormSubmit}>
           <div class="field">
             <label class="label">Username:</label>
             <div class="control is-normal">
