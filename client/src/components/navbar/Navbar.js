@@ -16,7 +16,7 @@ const navbar = (props) => {
 
   if (props.userInSession) {
     return (
-      <nav class="navbar">
+      <nav class="navbar is-light">
         <ul>
           <li>Welcome, {props.userInSession.username}</li>
           <li>
