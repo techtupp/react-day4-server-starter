@@ -17,18 +17,20 @@ const navbar = (props) => {
   if (props.userInSession) {
     return (
       <nav class="navbar is-light">
-        <ul>
-          <li>Welcome, {props.userInSession.username}</li>
-          <li>
-            <Link to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
-          </li>
-          <li>
-            <Link to='/'>
-              <button onClick={() => logoutUser(props)}>Logout</button>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="navbar-brand">
+              Welcome, {props.userInSession.username}
+            </div>
+            <div class="buttons">
+              <Link class="button is-dark" to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
+              <Link class="button is-light" to='/'>
+                <button onClick={() => logoutUser(props)}>Logout</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav >
     )
   } else {
     return (
