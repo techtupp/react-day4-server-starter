@@ -34,7 +34,7 @@ const navbar = (props) => {
     return (
       <div>
         <nav class="navbar">
-          <div class="navbar-start">
+          <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
                 <Link class="button is-light" to='/' style={{ textDecoration: 'none' }}>Login</Link>

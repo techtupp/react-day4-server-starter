@@ -44,7 +44,7 @@ class Login extends Component {
               <input class="input" type="text" name="password" placeholder="Password" value={this.state.password} onChange={e => this.handleChange(e)} />
             </div>
           </div>
-          <div>
+          <div class="buttons">
             <input cass="button is-hovered" type="submit" value="Login" />
           </div>
         </form>
