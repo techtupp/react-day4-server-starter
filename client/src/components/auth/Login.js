@@ -46,7 +46,9 @@ class Login extends Component {
           </div>
           <input cass="button is-hovered" type="submit" value="Login" />
         </form>
-        <p>Don't have account?
+        <div>
+        Don't have account?
+        </div>
           <div class="field">
             <Link class="button is-primary" to={"/signup"}> Signup</Link>
           </div>
