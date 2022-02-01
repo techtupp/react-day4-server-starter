@@ -59,10 +59,6 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // ADD SESSION SETTINGS HERE:
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(app.router);
-
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: "doesn't matter in our case", // but it's required
@@ -74,7 +70,9 @@ app.use(session({
 
 // USE passport.initialize() and passport.session() HERE:
 
-
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(app.mountpath);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
