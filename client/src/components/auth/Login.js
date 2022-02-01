@@ -44,15 +44,16 @@ class Login extends Component {
               <input class="input" type="text" name="password" placeholder="Password" value={this.state.password} onChange={e => this.handleChange(e)} />
             </div>
           </div>
-          <input cass="button is-hovered" type="submit" value="Login" />
+          <div>
+            <input cass="button is-hovered" type="submit" value="Login" />
+          </div>
         </form>
         <div>
-        Don't have account?
+          Don't have account?
         </div>
-          <div class="field">
-            <Link class="button is-primary" to={"/signup"}> Signup</Link>
-          </div>
-        </p>
+        <div class="field">
+          <Link class="button is-primary" to={"/signup"}> Signup</Link>
+        </div>
       </div>
     )
   }
