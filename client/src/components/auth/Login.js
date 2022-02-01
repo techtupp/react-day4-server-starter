@@ -34,7 +34,7 @@ class Login extends Component {
         <form class="box" onSubmit={this.handleFormSubmit}>
           <div class="field">
             <label class="label">Username:</label>
-            <div class="control">
+            <div class="control is-normal">
               <input class="input" type="text" name="username" placeholder="Username" value={this.state.username} onChange={e => this.handleChange(e)} />
             </div>
           </div>
@@ -44,7 +44,7 @@ class Login extends Component {
               <input class="input" type="text" name="password" placeholder="Password" value={this.state.password} onChange={e => this.handleChange(e)} />
             </div>
           </div>
-          <input type="submit" value="Login" />
+          <input cass="button is-hovered" type="submit" value="Login" />
         </form>
         <p>Don't have account?
           <div class="field">
