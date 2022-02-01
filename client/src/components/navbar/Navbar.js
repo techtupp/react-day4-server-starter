@@ -33,7 +33,7 @@ const navbar = (props) => {
   } else {
     return (
       <div>
-        <nav class="navbar">
+        <nav class="navbar is-light">
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
