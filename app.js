@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./configs/passport');
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -17,8 +18,6 @@ const authRoutes = require('./routes/auth-routes');
 
 const session       = require('express-session');
 const passport      = require('passport');
-
-require('./configs/passport');
 
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
@@ -60,6 +59,9 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // ADD SESSION SETTINGS HERE:
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: "doesn't matter in our case", // but it's required
@@ -71,9 +73,7 @@ app.use(session({
 
 // USE passport.initialize() and passport.session() HERE:
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(app.router);
+
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
