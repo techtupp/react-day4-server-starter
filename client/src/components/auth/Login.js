@@ -30,8 +30,8 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form class="box" box-radius="radius-small" onSubmit={this.handleFormSubmit}>
+      <div class="container">
+        <form class="box" onSubmit={this.handleFormSubmit}>
           <div class="field">
             <label class="label">Username:</label>
             <div class="control">
