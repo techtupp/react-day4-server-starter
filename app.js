@@ -19,6 +19,22 @@ const authRoutes = require('./routes/auth-routes');
 const session       = require('express-session');
 const passport      = require('passport');
 
+// ADD SESSION SETTINGS HERE:
+
+const MongoStore = require('connect-mongo')(session);
+app.use(session({
+  secret: "doesn't matter in our case", // but it's required
+  resave: false,
+  saveUninitialized: false, // don't create cookie for non-logged-in user
+  // MongoStore makes sure the user stays logged in also when the server restarts
+  store: new MongoStore({ mongooseConnection: mongoose.connection }) 
+}));
+
+// USE passport.initialize() and passport.session() HERE:
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
 mongoose
@@ -56,23 +72,6 @@ app.set('view engine', 'hbs');
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
-// ADD SESSION SETTINGS HERE:
-
-const MongoStore = require('connect-mongo')(session);
-app.use(session({
-  secret: "doesn't matter in our case", // but it's required
-  resave: false,
-  saveUninitialized: false, // don't create cookie for non-logged-in user
-  // MongoStore makes sure the user stays logged in also when the server restarts
-  store: new MongoStore({ mongooseConnection: mongoose.connection }) 
-}));
-
-// USE passport.initialize() and passport.session() HERE:
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(app.mountpath);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
