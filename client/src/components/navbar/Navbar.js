@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import 'bulma/css/bulma.css';
 import { logout } from '../../api'
 
-const logoutUser = (props) =>{
+const logoutUser = (props) => {
   logout()
-  .then(() => {
-    props.updateUser(null);  // sets the global user object to 'null'
-  })
+    .then(() => {
+      props.updateUser(null);  // sets the global user object to 'null'
+    })
 }
 
 const navbar = (props) => {
@@ -34,10 +34,14 @@ const navbar = (props) => {
     return (
       <div>
         <nav class="navbar">
-          <ul>
-            <li><Link to='/' style={{ textDecoration: 'none' }}>Login</Link></li>
-            <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
-          </ul>
+          <div class="navbar-center">
+            <div class="navbar-item">
+              <div class="buttons">
+                <Link class="button is-light" to='/' style={{ textDecoration: 'none' }}>Login</Link>
+                <Link class="button is-dark" to='/signup' style={{ textDecoration: 'none' }}>Signup</Link>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
     )
