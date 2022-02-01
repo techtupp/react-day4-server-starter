@@ -45,7 +45,7 @@ class Login extends Component {
             </div>
           </div>
           <div class="buttons">
-            <input cass="button is-hovered" type="submit" value="Login" />
+            <input cass="button is-dark" type="submit" value="Login" />
           </div>
         </form>
         <div>
