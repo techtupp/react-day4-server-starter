@@ -47,11 +47,11 @@ class ProjectList extends Component {
                       return (
 
                         <div key={project._id}>
-                          <hr>
+                        
                             <Link to={`/projects/${project._id}`}>
                               <h3 class="list-item">{project.title}</h3>
                             </Link>
-                          </hr>
+                          
                         </div>
 
                       )
