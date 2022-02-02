@@ -45,13 +45,15 @@ class ProjectList extends Component {
                   <div class='list'>
                     {this.state.listOfProjects.map(project => {
                       return (
-                        <hr>
+
                         <div key={project._id}>
-                          <Link to={`/projects/${project._id}`}>
-                            <h3 class="list-item">{project.title}</h3>
-                          </Link>
+                          <hr>
+                            <Link to={`/projects/${project._id}`}>
+                              <h3 class="list-item">{project.title}</h3>
+                            </Link>
+                          </hr>
                         </div>
-                        </hr>
+
                       )
                     })
                     }
