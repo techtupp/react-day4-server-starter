@@ -34,13 +34,13 @@ class AddProject extends Component {
           <div class="field">
             <label class="label">Todo:</label>
             <div class="control">
-              <input class="input",type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
+              <input class="input" type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
             </div>
           </div>
           <div class="field">
             <label class="label">Beschreibung:</label>
             <div class="control">
-              <textarea class="textarea is-small is-focused  " name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
+              <textarea class="textarea is-small is-focused" name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
             </div>
           </div>
           <div class="field">
