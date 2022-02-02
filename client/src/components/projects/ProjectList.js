@@ -41,7 +41,7 @@ class ProjectList extends Component {
           <tr>
             <td>
               <div class='columns is-mobile is-centered'>
-                <div class='column'>
+                <div class='column is-3'>
                   <div class='list'>
                     {this.state.listOfProjects.map(project => {
                       return (
