@@ -49,23 +49,21 @@ class ProjectList extends Component {
                 <div class='list'>
                   {this.state.listOfProjects.map(project => {
                     return (
-                      <div key={project._id}>
-                        <Link to={`/projects/${project._id}`}>
-                          <td>
+                      <td>
+                        <div key={project._id}>
+                          <Link to={`/projects/${project._id}`}>
                             <h3 class="list-item">{project.title}</h3>
-                          </td>
-                          <td>
+                          </Link>
 
-                          </td>
-                        </Link>
-                        {/* 🥁 added so the tasks can be displayed:  🥁 */}
-                        {/* <ul>
+                          {/* 🥁 added so the tasks can be displayed:  🥁 */}
+                          {/* <ul>
                   { project.tasks.map((task, index) => {
                     return <li key={index}>{task.title}</li>
                   }) }
                 </ul>  */}
-                        {/* <p style={{maxWidth: '400px'}} >{project.description} </p> */}
-                      </div>
+                          {/* <p style={{maxWidth: '400px'}} >{project.description} </p> */}
+                        </div>
+                      </td>
                     )
                   })
                   }
