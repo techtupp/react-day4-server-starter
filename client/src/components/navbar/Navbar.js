@@ -36,9 +36,9 @@ const navbar = (props) => {
   } else {
     return (
       <div>
-        <nav class="navbar-end is-light is-centered">
+        <nav class="is-light">
 
-          <div class="navbar-item">
+          <div class="navbar-item navbar-end">
             <div class="buttons">
               <Link class="button is-light" to='/' style={{ textDecoration: 'none' }}>Login</Link>
               <Link class="button is-dark" to='/signup' style={{ textDecoration: 'none' }}>Signup</Link>
