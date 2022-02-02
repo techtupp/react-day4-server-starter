@@ -13,6 +13,8 @@ import TaskDetails from './components/tasks/TaskDetails';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 
+import 'bulma/css/bulma.css';
+
 class App extends Component {
 
   constructor(props) {
