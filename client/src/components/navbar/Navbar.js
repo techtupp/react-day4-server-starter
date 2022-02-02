@@ -22,15 +22,16 @@ const navbar = (props) => {
           <div class="navbar-brand">
             Welcome, {props.userInSession.username}
           </div>
-          <div class="navbar-end">
-            <div class="buttons">
-              <Link class="button is-dark" to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
-              <Link class="button is-light" to='/'>
-                <button onClick={() => logoutUser(props)}>Logout</button>
-              </Link>
-            </div>
+        </div>
+        <div class="navbar-end">
+          <div class="buttons">
+            <Link class="button is-dark" to='/projects' style={{ textDecoration: 'none' }}>Projects</Link>
+            <Link class="button is-light" to='/'>
+              <button onClick={() => logoutUser(props)}>Logout</button>
+            </Link>
           </div>
         </div>
+
       </nav >
     )
   } else {
