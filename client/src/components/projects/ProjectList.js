@@ -40,9 +40,9 @@ class ProjectList extends Component {
           </tr>
           <tr>
             <td>
-              <div class='columns is-mobile is-centered'>
+              {/* <div class='columns is-mobile is-centered'>
                 <div class='column is-8'>
-                  <div class='list'>
+                  <div class='list'> */}
                     {this.state.listOfProjects.map(project => {
                       return (
 
@@ -57,9 +57,9 @@ class ProjectList extends Component {
                       )
                     })
                     }
-                  </div>
+               {/*    </div>
                 </div>
-              </div>
+              </div> */}
             </td>
             <td>
               <div style={{ float: "right" }}>
