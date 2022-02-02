@@ -48,7 +48,7 @@ class Signup extends Component {
         </form>
 
         <p>Already have account?
-            <Link to={"/"}> Login</Link>
+            <Link class="button is-dark" to={"/"}> Login</Link>
         </p>
 
       </div>

@@ -39,25 +39,29 @@ class ProjectList extends Component {
             </div>
           </tr>
           <tr>
-            <div class='columns is-mobile is-centered'>
-              <div class='column is-6'>
-                <div class='list'>
-                  {this.state.listOfProjects.map(project => {
-                    return (
-                      <div key={project._id}>
-                        <Link to={`/projects/${project._id}`}>
-                          <h3 class="list-item">{project.title}</h3>
-                        </Link>
-                      </div>
-                    )
-                  })
-                  }
+            <td>
+              <div class='columns is-mobile is-centered'>
+                <div class='column is-6'>
+                  <div class='list'>
+                    {this.state.listOfProjects.map(project => {
+                      return (
+                        <div key={project._id}>
+                          <Link to={`/projects/${project._id}`}>
+                            <h3 class="list-item">{project.title}</h3>
+                          </Link>
+                        </div>
+                      )
+                    })
+                    }
+                  </div>
                 </div>
               </div>
-            </div>
-            <div style={{ width: '40%', float: "right" }}>
-              <AddProject getData={() => this.getAllProjects()} /> {/* <== !!! */}
-            </div>
+            </td>
+            <td>
+              <div style={{ float: "right" }}>
+                <AddProject getData={() => this.getAllProjects()} /> {/* <== !!! */}
+              </div>
+            </td>
           </tr>
         </div>
 
